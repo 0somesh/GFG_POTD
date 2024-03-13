@@ -4,6 +4,6 @@ Date Month Year
 
 /// #header files
 
-// SomeFunction(){}cccc
+// SomeFunction(){}
 
 //main{}
