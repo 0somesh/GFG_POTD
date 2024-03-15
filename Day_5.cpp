@@ -1,11 +1,4 @@
-//{ Driver Code Starts
-// Initial Template for C++
-
-#include <bits/stdc++.h>
-using namespace std;
-
-// } Driver Code Ends
-// User function Template for C++
+// Header files
 
 class Solution {
   public:
@@ -49,20 +42,19 @@ class Solution {
     }
 };
 
-//{ Driver Code Starts.
 
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        vector<vector<char>> a(n, vector<char>(n));
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) cin >> a[i][j];
-        }
-        Solution ob;
-        cout << ob.largestSubsquare(n, a) << "\n";
-    }
-}
-// } Driver Code Ends
+
+// int main() {
+//     int t;
+//     cin >> t;
+//     while (t--) {
+//         int n;
+//         cin >> n;
+//         vector<vector<char>> a(n, vector<char>(n));
+//         for (int i = 0; i < n; i++) {
+//             for (int j = 0; j < n; j++) cin >> a[i][j];
+//         }
+//         Solution ob;
+//         cout << ob.largestSubsquare(n, a) << "\n";
+//     }
+// }
