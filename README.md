@@ -1,9 +1,5 @@
-THe files are in the following ---
+# The files are following ---
 
-Date Month Year
+1. Header files
+2. Functions
 
-/// #header files
-
-// SomeFunction(){}
-
-//main{}
