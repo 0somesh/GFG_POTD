@@ -1,33 +1,24 @@
 class Solution {
-  public:
+public:
     vector<int> printKClosest(vector<int> arr, int k, int x) {
-        int n = arr.size();
-        vector<int> vec(n);
-        for (int i = 0; i < n; i++) {
-            if (arr[i] == x) {
-                vec[i] = INT_MAX; 
-            } else {
-                vec[i] = abs(arr[i] - x);
-            }
-        }
-
         vector<int> ans;
-        while (k--) {
-            int minDist = INT_MAX;
-            int chosenIdx = -1;
+        int n = arr.size();
+        int left = lower_bound(arr.begin(), arr.end(), x) - arr.begin() - 1;
+        int right = left + 1;
 
-            for (int i = 0; i < n; i++) {
-                if (vec[i] < minDist) {
-                    minDist = vec[i];
-                    chosenIdx = i;
-                } else if (vec[i] == minDist && arr[i] > arr[chosenIdx]) {
-                    chosenIdx = i;
+        while (k > 0) {
+            if (left >= 0 && (right >= n || abs(arr[left] - x) < abs(arr[right] - x))) {
+                if (arr[left] != x) {
+                    ans.push_back(arr[left]);
+                    k--;
                 }
-            }
-
-            if (chosenIdx != -1) {
-                ans.push_back(arr[chosenIdx]);
-                vec[chosenIdx] = INT_MAX; 
+                left--;
+            } else {
+                if (right < n && arr[right] != x) {
+                    ans.push_back(arr[right]);
+                    k--;
+                }
+                right++;
             }
         }
 
